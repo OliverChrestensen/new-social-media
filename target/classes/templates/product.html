@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main>
+    <h1 th:text="|The name is ${title}|">Default title</h1>
+    <h2 th:text="${false ? 'test' : 'lol'}">Default title</h2>
+    <h3 th:text="${#locale.country}">Default title</h3>
+    <span th:text="${price}">Default title</span>
+    <ul th:each="feature : ${features}">
+        <li th:text="${feature}"></li>
+    </ul>
+    <p th:text="#{test}"></p>
+</main>
+</body>
+</html>

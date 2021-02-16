@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -22,5 +23,26 @@ public class FormExample {
 
         // This list gets returned as json!
         return list;
+    }
+
+    @GetMapping(value = "hello-world")
+    public String renderHelloWorld() {
+        return "hello-world.html";
+    }
+
+    @GetMapping(value = "/product")
+    public String renderProduct(Model model) {
+        String title = "Television";
+        int price = 1000;
+        ArrayList<String> features = new ArrayList<>();
+        features.add("HD");
+        features.add("Smart TV");
+        features.add("Netflix");
+
+        model.addAttribute("title", title);
+        model.addAttribute("price", price);
+        model.addAttribute("features", features);
+
+        return "product.html";
     }
 }
