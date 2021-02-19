@@ -13,7 +13,12 @@
     <ul th:each="feature : ${features}">
         <li th:text="${feature}"></li>
     </ul>
+    <p th:text="${today}"></p>
+    lol
     <p th:text="#{test}"></p>
+    <header th:replace="fragments/header.html(currentPage='looooo')"></header>
+    <header th:replace="fragments/users-logged.html :: logged-out"></header>
+
 </main>
 </body>
 </html>
