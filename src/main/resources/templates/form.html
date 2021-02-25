@@ -5,9 +5,24 @@
     <title>Title</title>
 </head>
 <body>
-<form action="">
-    <label for="name">Write your name</label>
-    <input type="text" id="name">
+<form action="/submit-post" method="POST">
+    <div>
+    <label for="title">Enter title:</label>
+    <input type="text" name="title" id="title">
+    </div>
+    <div>
+    <label for ="content">What is on your heart?</label>
+        <input type="text" id ="content">
+    </div>
+    <div>
+    <label for ="date">Enter date: </label>
+        <input type="date" id="date">
+    </div>
+    <label for="public">Public:</label>
+    <input type="radio" id="public" name="public/private" value="public">
+    <label for="private">Private:</label>
+    <input type="radio" id="private" name="public/private" value="private">
+    <button type="submit">submit</button>
 </form>
 </body>
 </html>
